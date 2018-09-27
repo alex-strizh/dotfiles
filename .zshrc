@@ -104,3 +104,8 @@ export LC_ALL=en_US.UTF-8
 alias zshconfig="vim ~/dotfiles/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
