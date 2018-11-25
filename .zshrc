@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export TERM="xterm-256color"
+# export TERM="xterm-256color"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/alex/.oh-my-zsh"
 DEFAULT_USER="alex"
@@ -90,9 +90,9 @@ export LC_ALL=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 else
-  export EDITOR='mvim'
+  export EDITOR='nvim'
 fi
 
 # ssh
@@ -103,12 +103,10 @@ fi
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Aliases
-alias zshconfig="vim ~/dotfiles/.zshrc"
-alias docker-enter="docker-compose run --rm --service-ports app /bin/bash"
-alias docker-enter-again="docker-compose run --rm app /bin/bash"
-alias docker-clean="docker ps -a | grep 'Exited\|Created' | cut -d ' ' -f 1 | xargs docker rm"
+alias zshconfig="nvim ~/dotfiles/.zshrc"
 alias tailf="tail -f"
+alias ssh="TERM=xterm-256color ssh"
+
 # Autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
@@ -116,13 +114,13 @@ alias tailf="tail -f"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
-#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 
 # Need for Mysql 5.6
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/mysql@5.6/lib"
 export CPPFLAGS="-I/usr/local/opt/mysql@5.6/include"
+
 # Need for openssl
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
@@ -131,7 +129,4 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export PATH="/usr/local/bin:$PATH"
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
