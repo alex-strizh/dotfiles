@@ -14,6 +14,9 @@ nmap <leader>os :cd ~/Projects/Elixir/short-link<cr>
 
 " Editing init.vim
 nmap <leader>ei :tabnew ~/dotfiles/nvim/init.vim<cr>
+nmap <leader>ek :tabnew ~/dotfiles/nvim/key_bindings.vim<cr>
+nmap <leader>eo :tabnew ~/dotfiles/nvim/options.vim<cr>
+nmap <leader>ep :tabnew ~/dotfiles/nvim/plugins.vim<cr>
 " Source current file
 nmap <leader>so :source %<cr>
 nmap <leader>te :Mix test<cr>
@@ -21,8 +24,8 @@ nmap <leader>te :Mix test<cr>
 nmap <leader>s :%s//g<Left><Left>
 " Buffer handling
 nmap L :let &number=1-&number<CR>
-nmap <leader>l :bnext<CR>
-nmap <c-h> :bprevious<CR>
+" nmap <leader>l :bnext<CR>
+" nmap <c-h> :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 nmap <leader>bl :ls<CR>
 nmap <leader>0 :set invnumber<CR>
@@ -36,3 +39,14 @@ noremap <F3> :Autoformat<CR>
 if maparg('<C-k>', 'n') ==# ''
   nnoremap <silent> <C-k> :nohlsearch<CR><C-L>
 endif
+
+" upper/lower word
+nnoremap <leader>u mQviwU`Q
+nnoremap <leader>l mQviwu`Q
+
+" upper/lower first char of word
+nnoremap <leader>U mQgewvU`Q
+nnoremap <leader>L mQgewvu`Q
+set pastetoggle=<F2>
+let g:user_emmet_leader_key='<C-Z>'
+
